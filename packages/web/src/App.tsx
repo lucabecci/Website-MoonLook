@@ -1,8 +1,13 @@
-import React from "react";
-import "./App.css";
+import { Fragment } from "react";
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
 
 function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <Fragment>
+      <Navbar />
+      <Header />
+    </Fragment>
+  );
 }
-
 export default App;
