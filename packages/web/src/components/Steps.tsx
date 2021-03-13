@@ -15,7 +15,8 @@ const Steps = (props: Props) => {
   const [third, setThird] = useState<string>(unselected);
   const [four, setFour] = useState<string>(unselected);
 
-  const changeSelected = (n: number) => {
+  const changeSelected = (e:any, n: number) => {
+    e.preventDefault()
     switch (n) {
       case 1:
         setFirst(selected);
@@ -61,7 +62,7 @@ const Steps = (props: Props) => {
         </div>
         <div className="container px-5 py-6 mx-auto flex flex-wrap flex-col">
           <div className="flex mx-auto flex-wrap mb-20">
-            <div className={first} onClick={() => changeSelected(1)}>
+            <div className={first} onClick={(e) => changeSelected(e, 1)}>
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -75,7 +76,7 @@ const Steps = (props: Props) => {
               </svg>
               STEP 1
             </div>
-            <div className={second} onClick={() => changeSelected(2)}>
+            <div className={second} onClick={(e) => changeSelected(e, 2)}>
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -89,7 +90,7 @@ const Steps = (props: Props) => {
               </svg>
               STEP 2
             </div>
-            <div className={third} onClick={() => changeSelected(3)}>
+            <div className={third} onClick={(e) => changeSelected(e, 3)}>
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -104,7 +105,7 @@ const Steps = (props: Props) => {
               </svg>
               STEP 3
             </div>
-            <div className={four} onClick={() => changeSelected(4)}>
+            <div className={four} onClick={(e) => changeSelected(e, 4)}>
               <svg
                 fill="none"
                 stroke="currentColor"
