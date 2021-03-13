@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
     <Fragment>
       <nav className="p-1 relative select-none bg-white lg:flex lg:items-stretch w-full">
         <div className="flex flex-no-shrink items-stretch h-12">
-          <h2 className="text-gray-900 font-sans text-1.5xl font-bold flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:font-bold transition duration-300 hover:text-blue-600">
+          <h2 className="text-gray-900 font-sans text-1.5xl font-extrabold flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:font-bold transition duration-300 hover:text-blue-600">
             MOONLOOK
           </h2>
           <button
@@ -43,8 +43,14 @@ const Navbar: React.FC = () => {
           className={`lg:flex lg:items-stretch lg:flex-no-shrink lg:flex-grow ${toggle}`}
         >
           <div className="lg:flex lg:items-stretch lg:justify-end ml-auto">
-            <p className="font-light text-gray-900 flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center transition duration-300 hover:text-blue-600">
-              SERVICES
+            <p className="font-medium text-gray-900 flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center transition duration-300 hover:text-blue-600">
+              NAV
+            </p>
+            <p className="font-medium text-gray-900 flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center transition duration-300 hover:text-blue-600">
+              NAV
+            </p>
+            <p className="font-medium text-gray-900 flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center transition duration-300 hover:text-blue-600">
+              NAV
             </p>
           </div>
         </div>

@@ -52,12 +52,10 @@ const Steps = (props: Props) => {
         <div className="container px-5 pt-10 pb-2 mx-auto">
           <div className="text-center mb-2">
             <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-white mb-4 text-gray-900">
-              Raw Denim Heirloom Man Braid
+              Title
             </h1>
             <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
-              Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-              taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh
-              mi pug.
+              Description
             </p>
           </div>
         </div>
