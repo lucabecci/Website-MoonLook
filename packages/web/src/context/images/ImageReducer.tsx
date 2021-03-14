@@ -9,7 +9,7 @@ export default (state: any, action: {payload: any, type: any}) => {
         case GET_IMAGES:
             return{
                 ...state,
-                images: payload.images
+                images: payload
             }
     }
 }

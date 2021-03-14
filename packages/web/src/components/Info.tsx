@@ -9,10 +9,11 @@ const Info = (props: Props) => {
         <div className="container px-5 py-24 mx-auto">
           <div className="text-center mb-20">
             <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-white mb-4">
-              Title
+              SERVICIOS
             </h1>
             <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
-              Description
+              Estos son algunos de los servicios que brindamos.
+              Para otro tipo de servicios contactese con nosotros.
             </p>
           </div>
           <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
@@ -31,7 +32,7 @@ const Info = (props: Props) => {
                   <path d="M22 4L12 14.01l-3-3"></path>
                 </svg>
                 <span className="title-font font-medium text-white">
-                  Authentic Cliche Forage
+                  Landing Page
                 </span>
               </div>
             </div>
@@ -50,7 +51,7 @@ const Info = (props: Props) => {
                   <path d="M22 4L12 14.01l-3-3"></path>
                 </svg>
                 <span className="title-font font-medium text-white">
-                  Kinfolk Chips Snackwave
+                  E-commerce
                 </span>
               </div>
             </div>
@@ -69,7 +70,7 @@ const Info = (props: Props) => {
                   <path d="M22 4L12 14.01l-3-3"></path>
                 </svg>
                 <span className="title-font font-medium text-white">
-                  Coloring Book Ethical
+                  Blogs
                 </span>
               </div>
             </div>
@@ -88,7 +89,7 @@ const Info = (props: Props) => {
                   <path d="M22 4L12 14.01l-3-3"></path>
                 </svg>
                 <span className="title-font font-medium text-white">
-                  Typewriter Polaroid Cray
+                  Sistemas institucionales
                 </span>
               </div>
             </div>
@@ -107,7 +108,7 @@ const Info = (props: Props) => {
                   <path d="M22 4L12 14.01l-3-3"></path>
                 </svg>
                 <span className="title-font font-medium text-white">
-                  Pack Truffaut Blue
+                  Sistemas para empresas
                 </span>
               </div>
             </div>
@@ -126,13 +127,13 @@ const Info = (props: Props) => {
                   <path d="M22 4L12 14.01l-3-3"></path>
                 </svg>
                 <span className="title-font font-medium text-white">
-                  The Catcher In The Rye
+                  Sistemas de control para tu negocio
                 </span>
               </div>
             </div>
           </div>
           <button className="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-            Button
+            Precios
           </button>
         </div>
       </section>

@@ -44,13 +44,13 @@ const Navbar: React.FC = () => {
         >
           <div className="lg:flex lg:items-stretch lg:justify-end ml-auto">
             <p className="font-medium text-gray-900 flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center transition duration-300 hover:text-blue-600">
-              NAV
+              PRECIOS
             </p>
             <p className="font-medium text-gray-900 flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center transition duration-300 hover:text-blue-600">
-              NAV
+              NOSOTROS
             </p>
             <p className="font-medium text-gray-900 flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center transition duration-300 hover:text-blue-600">
-              NAV
+              CONTACTO
             </p>
           </div>
         </div>

@@ -9,15 +9,12 @@ const Header = (props: Props) => {
         <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
           <div className="max-w-xl mb-6">
             <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-              Ti
+              Bienvenidos a MOONLOOK
               <br className="hidden md:block" />
-              tle
-              <span className="inline-block text-deep-purple-accent-400">
-                
-              </span>
             </h2>
             <p className="text-base text-gray-700 md:text-lg">
-              Description
+              Un lugar donde todas tus ideas pueden ser digitalizadas y tu empresa puede llegar a nuevos niveles.
+              Logramos un excelente producto a un precio accesible y que cumpla con todos tus criterios. 
             </p>
           </div>
           <div className="flex flex-col items-center md:flex-row">
@@ -25,14 +22,7 @@ const Header = (props: Props) => {
               href="/"
               className="inline-flex items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto md:mr-4 md:mb-0 bg-indigo-600 hover:bg-indigo-900 focus:shadow-outline focus:outline-none"
             >
-              Apply Now
-            </a>
-            <a
-              href="/"
-              aria-label=""
-              className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700"
-            >
-              Learn more
+              Mas informacion
             </a>
           </div>
         </div>

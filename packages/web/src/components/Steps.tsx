@@ -53,10 +53,10 @@ const Steps = (props: Props) => {
         <div className="container px-5 pt-10 pb-2 mx-auto">
           <div className="text-center mb-2">
             <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-white mb-4 text-gray-900">
-              Title
+              PASOS
             </h1>
             <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
-              Description
+              Estos son los pasos a realizar:
             </p>
           </div>
         </div>
