@@ -1,8 +1,11 @@
 import React, { Fragment } from "react";
+import { useHistory } from "react-router-dom";
 
 interface Props {}
 
 const Info = (props: Props) => {
+  const history = useHistory();
+
   return (
     <Fragment>
       <section className="text-gray-400 bg-gray-900 body-font">
@@ -12,8 +15,8 @@ const Info = (props: Props) => {
               SERVICIOS
             </h1>
             <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
-              Estos son algunos de los servicios que brindamos.
-              Para otro tipo de servicios contactese con nosotros.
+              Estos son algunos de los servicios que brindamos. Para otro tipo
+              de servicios contactese con nosotros.
             </p>
           </div>
           <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
@@ -69,9 +72,7 @@ const Info = (props: Props) => {
                   <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
                   <path d="M22 4L12 14.01l-3-3"></path>
                 </svg>
-                <span className="title-font font-medium text-white">
-                  Blogs
-                </span>
+                <span className="title-font font-medium text-white">Blogs</span>
               </div>
             </div>
             <div className="p-2 sm:w-1/2 w-full">
@@ -132,7 +133,10 @@ const Info = (props: Props) => {
               </div>
             </div>
           </div>
-          <button className="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+          <button
+            className="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+            onClick={() => history.push("/precios")}
+          >
             Precios
           </button>
         </div>

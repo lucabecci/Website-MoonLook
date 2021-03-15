@@ -15,8 +15,8 @@ const Steps = (props: Props) => {
   const [third, setThird] = useState<string>(unselected);
   const [four, setFour] = useState<string>(unselected);
 
-  const changeSelected = (e:any, n: number) => {
-    e.preventDefault()
+  const changeSelected = (e: any, n: number) => {
+    e.preventDefault();
     switch (n) {
       case 1:
         setFirst(selected);
@@ -121,7 +121,7 @@ const Steps = (props: Props) => {
               STEP 4
             </div>
           </div>
-          <StepsCard 
+          <StepsCard
             first={first}
             second={second}
             third={third}
