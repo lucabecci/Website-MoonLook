@@ -59,7 +59,6 @@ export const Main = () => {
             "INTEGRACION CON MERCADOPAGO",
             "PANEL ADMIN PARA CONTROL DE STOCK/PEDIDOS",
             "REGISTRO DE USUARIOS",
-            "CONTROL MENSUAL",
           ]}
         />
       </div>
