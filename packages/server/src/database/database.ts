@@ -1,17 +1,16 @@
 import mongoose, { ConnectOptions, Mongoose } from "mongoose";
-import config from "../config/config";
 
 class Database {
     private _mongoose: Mongoose;
     private _configuration: ConnectOptions;
     private _db_uri: string;
 
-    constructor() {
+    constructor(db_uri: string) {
         this._mongoose = mongoose;
         this._configuration = {
             useNewUrlParser: true,
         };
-        this._db_uri = config.DB_URI;
+        this._db_uri = db_uri;
     }
 
     public async Connection(): Promise<void> {
