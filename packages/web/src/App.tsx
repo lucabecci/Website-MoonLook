@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import ImageContext from "./context/images/ImagesContext";
 import Company from "./pages/Company";
+import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Price from "./pages/Price";
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/precios" component={Price} />
           <Route path="/nosotros" component={Company} />
+          <Route path="/contacto" component={Contact} />
           <Route component={NotFound} />
         </Switch>
         <Footer />

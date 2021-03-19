@@ -11,10 +11,10 @@ const Main = (props: Props) => {
           <div className="flex flex-wrap -mx-8">
             <div className="w-full lg:w-1/2 px-8">
               <div className="mb-12 lg:mb-0 pb-12 lg:pb-0 border-b lg:border-b-0">
-                <h2 className="mb-4 text-3xl lg:text-4xl font-bold font-heading dark:text-white">
+                <h2 className="mb-4 text-3xl lg:text-4xl font-semibold text-gray-800 font-heading dark:text-white">
                   Te contamos un poco de nostros!
                 </h2>
-                <p className="mb-8 leading-loose text-gray-700 dark:text-gray-300">
+                <p className="mb-8 leading-loose text-gray-500 dark:text-gray-300">
                   Somos una empresa dedicada a la venta de sistemas y a la
                   creacion de proyectos open-source, donde tratamos de resolver
                   o agilizar problemas existentes para que las personas puedan

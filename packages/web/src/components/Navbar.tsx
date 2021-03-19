@@ -73,7 +73,10 @@ const Navbar: React.FC = () => {
             >
               NOSOTROS
             </p>
-            <p className="font-medium text-gray-900 flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center transition duration-300 hover:text-blue-600">
+            <p
+              className="font-medium text-gray-900 flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center transition duration-300 hover:text-blue-600"
+              onClick={() => history.push("/contacto")}
+            >
               CONTACTO
             </p>
           </div>

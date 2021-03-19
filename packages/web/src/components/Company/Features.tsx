@@ -65,7 +65,7 @@ const Features = (props: Props) => {
                 Los mejores dise;os
               </h3>
               <p className="text-gray-500 dark:text-gray-300 leading-loose">
-                Nos gusta realizar buenos dise;os y trabajar con las ultimas
+                Nos gusta realizar buenos diseños y trabajar con las ultimas
                 tecnologias del mercado para asi lograr los mejores sistemas.
               </p>
             </div>

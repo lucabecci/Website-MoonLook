@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 interface Props {}
 
 const Footer = (props: Props) => {
-  const year = new Date()
+  const year = new Date();
   return (
     <Fragment>
       <footer className="text-gray-400 bg-gray-900 body-font">
@@ -11,15 +11,19 @@ const Footer = (props: Props) => {
           <div className="flex title-font font-medium items-center md:justify-start justify-center text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              fill="none"
+              className="w-8 h-8"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
               stroke="currentColor"
+              fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth="2"
-              className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-              viewBox="0 0 24 24"
             >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M18.816 13.58c2.292 2.138 3.546 4 3.092 4.9c-.745 1.46 -5.783 -.259 -11.255 -3.838c-5.47 -3.579 -9.304 -7.664 -8.56 -9.123c.464 -.91 2.926 -.444 5.803 .805"></path>
+              <circle cx="12" cy="12" r="7"></circle>
             </svg>
             <span className="ml-3 text-xl">MoonLook</span>
           </div>
@@ -31,7 +35,7 @@ const Footer = (props: Props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              @lucabecci 
+              @lucabecci
             </a>
           </p>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">

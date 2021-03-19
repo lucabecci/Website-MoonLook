@@ -8,13 +8,15 @@ const Header = (props: Props) => {
       <div className="flex flex-col items-start w-full max-w-xl px-4 mx-auto lg:px-8 lg:max-w-screen-xl">
         <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
           <div className="max-w-xl mb-6">
-            <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+            <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl sm:leading-none">
               Bienvenidos a MOONLOOK
               <br className="hidden md:block" />
             </h2>
-            <p className="text-base text-gray-700 md:text-lg">
-              Un lugar donde todas tus ideas pueden ser digitalizadas y tu empresa puede llegar a nuevos niveles.
-              Logramos un excelente producto a un precio accesible y que cumpla con todos tus criterios. 
+            <p className="text-base text-gray-500 md:text-lg">
+              Un lugar donde todas tus ideas pueden ser digitalizadas y tu
+              empresa puede llegar a nuevos niveles. Logramos un excelente
+              producto a un precio accesible y que cumpla con todos tus
+              criterios.
             </p>
           </div>
           <div className="flex flex-col items-center md:flex-row">
