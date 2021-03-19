@@ -1,15 +1,18 @@
-import express, { Application, Request, Response } from "express";
+import express, { Application, IRouter, Request, Response } from "express";
 import cors from "cors";
 import morgan from "morgan";
 import config from "./config/config";
 import Database from "./database/database";
-
+import ContactRouter from './routes/contact.routes'
 class App {
     private _app: Application;
     private _database: Database
-    constructor() {
+    private _contactRouter: IRouter
+    constructor(){
         this._app = express();
         this._database = new Database(config.DB_URI);
+
+        this._contactRouter = ContactRouter
 
         this.initDatabase();
         this.initConfig();
@@ -35,6 +38,7 @@ class App {
             console.log(req.ip);
             res.send("Index of the moonlookhttps://github.com/MoonLookOK/Website-MoonLook API");
         });
+        this._app.use('/contact', this._contactRouter)
     }
 
     public run(): void {

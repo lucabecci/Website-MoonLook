@@ -9,6 +9,7 @@ class Database {
         this._mongoose = mongoose;
         this._configuration = {
             useNewUrlParser: true,
+            useUnifiedTopology: true,
         };
         this._db_uri = db_uri;
     }
@@ -25,6 +26,10 @@ class Database {
                 r--;
                 console.log("Retries left:", r);
                 await new Promise((res) => setTimeout(res, 5000));
+                if (r == 0) {
+                    process.exit(0)
+                    return
+                }
             }
         }
     }
