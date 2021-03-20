@@ -1,4 +1,5 @@
 #tailwind github
+dist
 main.css
 packages/web/src/assets/main.csss
 # Created by https://www.toptal.com/developers/gitignore/api/linux,node,yarn,vscode,git

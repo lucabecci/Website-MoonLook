@@ -1,11 +1,15 @@
 version: "3.8"
 
 services:
-  nodeserver:
+  server:
     build:
       context: ./packages/server
     ports:
       - "4000:4000"
+    links:
+      - mongo
+    environment:
+      - DB_URI="mongodb://mongo:27017/moonlook"
 
   nginx:
     restart: always
@@ -13,3 +17,9 @@ services:
       context: ./packages/nginx
     ports:
       - "81:80"
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27017:27017"
