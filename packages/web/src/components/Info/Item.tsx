@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React, { Fragment } from "react";
 
 interface Props {
@@ -19,11 +20,11 @@ const Item = (props: Props) => {
               width="24"
               height="24"
               viewBox="0 0 24 24"
-              stroke-width="2"
+              strokeWidth="2"
               stroke="currentColor"
               fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
               <path d="M18.816 13.58c2.292 2.138 3.546 4 3.092 4.9c-.745 1.46 -5.783 -.259 -11.255 -3.838c-5.47 -3.579 -9.304 -7.664 -8.56 -9.123c.464 -.91 2.926 -.444 5.803 .805"></path>
@@ -40,9 +41,9 @@ const Item = (props: Props) => {
                   <svg
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="3"
                     className="w-3 h-3"
                     viewBox="0 0 24 24"
                   >
@@ -56,9 +57,9 @@ const Item = (props: Props) => {
                   <svg
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="3"
                     className="w-3 h-3"
                     viewBox="0 0 24 24"
                   >
@@ -72,9 +73,9 @@ const Item = (props: Props) => {
                   <svg
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="3"
                     className="w-3 h-3"
                     viewBox="0 0 24 24"
                   >

@@ -1,9 +1,8 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React, { Fragment } from "react";
 import Features from "./Features";
 
-interface Props {}
-
-const Main = (props: Props) => {
+const Main = () => {
   return (
     <Fragment>
       <section className="pt-10 pb-10">

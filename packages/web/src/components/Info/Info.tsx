@@ -2,9 +2,8 @@ import React, { Fragment } from "react";
 import { useHistory } from "react-router-dom";
 import Item from "./Item";
 
-interface Props {}
-
-const Info = (props: Props) => {
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+const Info = () => {
   const history = useHistory();
 
   return (
