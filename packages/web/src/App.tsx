@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React, { Fragment, ReactElement, useContext, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
