@@ -8,6 +8,7 @@
   },
   "scripts": {
     "check": "lerna run check",
+    "build": "lerna run build",
     "new-version": "lerna version --conventional-commits --yes"
   },
   "workspaces": [
