@@ -27,8 +27,8 @@ class Database {
                 console.log("Retries left:", r);
                 await new Promise((res) => setTimeout(res, 5000));
                 if (r == 0) {
-                    process.exit(0)
-                    return
+                    process.exit(0);
+                    return;
                 }
             }
         }

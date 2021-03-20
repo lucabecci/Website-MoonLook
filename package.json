@@ -6,6 +6,10 @@
   "devDependencies": {
     "lerna": "^4.0.0"
   },
+  "scripts": {
+    "check": "lerna run check",
+    "new-version": "lerna version --conventional-commits --yes"
+  },
   "workspaces": [
     "packages/*"
   ],
