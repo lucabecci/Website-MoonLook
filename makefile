@@ -1,9 +1,9 @@
 install-docker: 
-./bin/Docker.sh
+	./bin/Docker.sh
 install-compose:
-./bin/Compose.sh
+	./bin/Compose.sh
 project:
-./bin/Project.sh
+	./bin/Project.sh
 run-all:
 	make install-docker
 	make install-compose
