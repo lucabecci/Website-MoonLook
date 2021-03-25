@@ -1,3 +1,3 @@
 #Run the compose
-echo("run compose for app")
+echo "run compose for app"
 docker-compose up -d
