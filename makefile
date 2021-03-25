@@ -4,7 +4,7 @@ install-compose:
 ./bin/Compose.sh
 project:
 ./bin/Project.sh
-run-all:4
+run-all:
 	make install-docker
 	make install-compose
 	make project
