@@ -1,11 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import React, { Fragment, ReactElement, useContext, useEffect } from "react";
+import React, { Fragment, ReactElement } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
 
 import Navbar from "./components/Navbar";
-import ImageContext from "./context/images/ImagesContext";
 import Company from "./pages/Company";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
@@ -13,10 +12,6 @@ import NotFound from "./pages/NotFound";
 import Price from "./pages/Price";
 
 const App: React.FC = (): ReactElement => {
-    const imageContext = useContext(ImageContext);
-    useEffect(() => {
-        imageContext.getImages();
-    }, []);
     return (
         <Fragment>
             <BrowserRouter>
@@ -32,5 +27,5 @@ const App: React.FC = (): ReactElement => {
             </BrowserRouter>
         </Fragment>
     );
-}
+};
 export default App;

@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import "./assets/main.css";
-import ImageState from "./context/images/ImageState";
+import ContactState from "./context/Contact/ContactState";
 ReactDOM.render(
     <React.StrictMode>
-        <ImageState>
+        <ContactState>
             <App />
-        </ImageState>
+        </ContactState>
     </React.StrictMode>,
     document.getElementById("root")
 );

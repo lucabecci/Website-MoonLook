@@ -4,6 +4,7 @@ import ContactReducer from "./ContaxtReducer";
 import { ReqContact } from "../../utils/interfaces";
 import { CLOSE_CONTACT_ALERT, ERROR_CONTACT, SUCCESS_CONTACT } from "../types";
 import ContactContext from "./ContactContext";
+import { checkValues, emailIsValid } from "../../utils/Checks";
 const ContactState = (props: any) => {
     const proxy = process.env.PROXY_URL || "";
 
@@ -17,6 +18,23 @@ const ContactState = (props: any) => {
 
     const sendContact = async (req: ReqContact) => {
         try {
+            const campsChecked = checkValues(
+                req.nombre,
+                req.apellido,
+                req.email,
+                req.description,
+                req.choose,
+                req.numero
+            );
+            if (campsChecked) {
+                errorContact("Please send a valid types for the camps");
+                return;
+            }
+            const emailChecked = emailIsValid(req.email);
+            if (emailChecked) {
+                errorContact("Please send a valid email");
+                return;
+            }
             const resp = await axios.post(proxy, req);
             if (resp.data.succes === true) {
                 successContact("Succes to send your contact");

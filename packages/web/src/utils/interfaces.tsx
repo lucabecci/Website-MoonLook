@@ -1,6 +1,8 @@
 export interface ReqContact {
-    name: string;
+    nombre: string;
+    apellido: string;
     email: string;
+    numero: number;
     choose: string;
     description: string;
 }
