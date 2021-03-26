@@ -11,13 +11,6 @@ services:
     environment:
       - DB_URI="mongodb://mongo:27017/moonlook"
 
-  nginx:
-    restart: always
-    build:
-      context: ./packages/nginx
-    ports:
-      - "80:80"
-
   mongo:
     container_name: mongo
     image: mongo
