@@ -1,19 +1,41 @@
 echo "STARTED WITH DOCKER" 
-##Check docker binaries
-echo "remove and check docker binaries" 
-sudo yum remove docker docker-client docker-client-latest docker-common docker-latest docker-latest-logrotate docker-logrotate docker-engine
+
+#Update packages
+echo "updating packages..." 
+sudo apt update
+
 ##install others for correct docker installation
-echo "install utils for docker" 
-sudo yum install -y yum-utils
-##Config manager
-echo "config manager" 
-sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-##install docker
-echo "install docker" 
-sudo yum install docker-ce docker-ce-cli containerd.io	
-#Verify
-echo "verify files" 
-yum list docker-ce --showduplicates | sort -r
-#Start service
-echo "start service" 
-sudo systemctl start docker
+echo "Installing utils..." 
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+
+##Config GPG
+echo "Configurating GPG..." 
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+#Repository of docker
+echo "Downloading repository of docker..." 
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+
+#Update
+echo "Checking updates..." 
+sudo apt update
+
+#Checking repository
+echo "Checking repository..." 
+apt-cache policy docker-ce
+
+#Install docker
+echo "Installing docker..." 
+sudo apt install docker-ce
+
+#Check the status
+echo "Checking status service"
+sudo systemctl status docker
+
+#Set usrmod
+echo "Setting usrmod"
+sudo usermod -aG docker ubuntu
+
+#Apply usrmod changes
+echo "Apply usrmod changes"
+su - ubuntu
