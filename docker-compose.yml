@@ -16,7 +16,7 @@ services:
     build:
       context: ./packages/nginx
     ports:
-      - "81:80"
+      - "80:80"
 
   mongo:
     container_name: mongo
