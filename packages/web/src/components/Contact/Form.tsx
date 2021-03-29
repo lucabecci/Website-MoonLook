@@ -1,6 +1,8 @@
 import React, { Fragment, useContext } from "react";
 import { useForm } from "react-hook-form";
 import ContactContext from "../../context/Contact/ContactContext";
+import ErrorAlert from "../Alerts/ErrorAlert";
+import SuccessAlert from "../Alerts/SuccessAlert";
 
 interface Props {}
 
@@ -8,7 +10,6 @@ type inputs = {
     nombre: string;
     apellido: string;
     email: string;
-    numero: string;
     choose: string;
     description: string;
 };
@@ -16,14 +17,25 @@ type inputs = {
 const Form = (props: Props) => {
     const { register, handleSubmit, errors } = useForm<inputs>();
     const contactContext = useContext(ContactContext);
-    const onSubmit = (data: any, e: any) => {
+    const onSubmit = async (data: any, e: any) => {
         e.preventDefault();
-        contactContext.sendContact(data);
-        console.log(data);
+        const resp = await contactContext.sendContact(data);
+        if (resp === true) {
+            e.target.reset();
+            return;
+        }
     };
 
     return (
         <Fragment>
+            {contactContext.contact.error ? (
+                <ErrorAlert message={contactContext.contact.error_message} />
+            ) : null}
+            {contactContext.contact.success ? (
+                <SuccessAlert
+                    message={contactContext.contact.success_message}
+                />
+            ) : null}
             <form
                 className="lg:w-1/2 md:w-2/3 mx-auto"
                 onSubmit={handleSubmit(onSubmit)}
@@ -40,12 +52,23 @@ const Form = (props: Props) => {
                             <input
                                 type="text"
                                 name="nombre"
-                                ref={register({ required: true })}
+                                ref={register({
+                                    required: {
+                                        value: true,
+                                        message: "Nombre es requerido",
+                                    },
+                                    maxLength: {
+                                        value: 20,
+                                        message: "No más de 20 carácteres!",
+                                    },
+                                    minLength: {
+                                        value: 1,
+                                        message: "Mínimo 1 carácter",
+                                    },
+                                })}
                                 className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                             ></input>
-                            {errors.nombre && (
-                                <span>This field is required</span>
-                            )}
+                            {errors.nombre && errors.nombre.message}
                         </div>
                     </div>
                     <div className="p-2 w-1/2">
@@ -59,12 +82,23 @@ const Form = (props: Props) => {
                             <input
                                 type="text"
                                 name="apellido"
-                                ref={register({ required: true })}
+                                ref={register({
+                                    required: {
+                                        value: true,
+                                        message: "Apellido es requerido",
+                                    },
+                                    maxLength: {
+                                        value: 20,
+                                        message: "No más de 20 carácteres!",
+                                    },
+                                    minLength: {
+                                        value: 1,
+                                        message: "Mínimo 1 carácter",
+                                    },
+                                })}
                                 className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                             ></input>
-                            {errors.apellido && (
-                                <span>This field is required</span>
-                            )}
+                            {errors.apellido && errors.apellido.message}
                         </div>
                     </div>
 
@@ -79,34 +113,22 @@ const Form = (props: Props) => {
                             <input
                                 type="email"
                                 name="email"
-                                ref={register({ required: true })}
+                                ref={register({
+                                    required: {
+                                        value: true,
+                                        message: "Email es requerido",
+                                    },
+                                    pattern: {
+                                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                                        message: "Ingresa un email valido",
+                                    },
+                                })}
                                 className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                             ></input>
-                            {errors.email && (
-                                <span>This field is required</span>
-                            )}
+                            {errors.email && errors.email.message}
                         </div>
                     </div>
                     <div className="p-2 w-1/2">
-                        <div className="relative">
-                            <label
-                                htmlFor="name"
-                                className="leading-7 text-sm text-gray-600"
-                            >
-                                Numero
-                            </label>
-                            <input
-                                type="number"
-                                name="numero"
-                                ref={register({ required: true })}
-                                className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                            ></input>
-                            {errors.numero && (
-                                <span>This field is required</span>
-                            )}
-                        </div>
-                    </div>
-                    <div className="p-2 w-full">
                         <div className="relative">
                             <label
                                 htmlFor="choose"
@@ -116,7 +138,12 @@ const Form = (props: Props) => {
                             </label>
                             <select
                                 className="w-full border bg-white rounded px-3 py-2 outline-none"
-                                ref={register({ required: true })}
+                                ref={register({
+                                    required: {
+                                        value: true,
+                                        message: "Proyecto es requerido",
+                                    },
+                                })}
                                 name="choose"
                             >
                                 <option className="py-1" value="landing page">
@@ -153,9 +180,7 @@ const Form = (props: Props) => {
                                     Microservicios Backend
                                 </option>
                             </select>
-                            {errors.choose && (
-                                <span>This field is required</span>
-                            )}
+                            {errors.choose && errors.choose.message}
                         </div>
                     </div>
                     <div className="p-2 w-full">
@@ -168,12 +193,23 @@ const Form = (props: Props) => {
                             </label>
                             <textarea
                                 name="description"
-                                ref={register({ required: true })}
+                                ref={register({
+                                    required: {
+                                        value: true,
+                                        message: "Descripcion es requerido",
+                                    },
+                                    maxLength: {
+                                        value: 80,
+                                        message: "No más de 80 carácteres!",
+                                    },
+                                    minLength: {
+                                        value: 15,
+                                        message: "Mínimo 15 carácteres",
+                                    },
+                                })}
                                 className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                             ></textarea>
-                            {errors.description && (
-                                <span>This field is required</span>
-                            )}
+                            {errors.description && errors.description.message}
                         </div>
                     </div>
                     <div className="p-2 w-full">

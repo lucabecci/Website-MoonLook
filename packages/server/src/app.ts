@@ -25,12 +25,7 @@ class App {
     private initConfig(): void {
         this._app.use(express.urlencoded({ extended: false }));
         this._app.use(express.json());
-        this._app.use(
-            cors({
-                credentials: true,
-                origin: "http:localhost:3000",
-            })
-        );
+        this._app.use(cors());
         this._app.use(morgan(config.STATUS));
     }
     private initRoutes(): void {

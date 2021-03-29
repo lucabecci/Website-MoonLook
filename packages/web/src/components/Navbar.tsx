@@ -15,6 +15,15 @@ const Navbar: React.FC = () => {
         }
         setToggle("");
     };
+    const changeRoute = (path: string) => {
+        history.push(`/${path}`);
+        if (toggle === "") {
+            setToggle("hidden");
+            return;
+        }
+        setToggle("");
+        return;
+    };
     return (
         <Fragment>
             <nav className="p-1 relative select-none bg-white lg:flex lg:items-stretch w-full">
@@ -73,19 +82,19 @@ const Navbar: React.FC = () => {
                     <div className="lg:flex lg:items-stretch lg:justify-end ml-auto">
                         <p
                             className="font-medium text-gray-900 flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center transition duration-300 hover:text-blue-600"
-                            onClick={() => history.push("/precios")}
+                            onClick={() => changeRoute("precios")}
                         >
                             PRECIOS
                         </p>
                         <p
                             className="font-medium text-gray-900 flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center transition duration-300 hover:text-blue-600"
-                            onClick={() => history.push("/nosotros")}
+                            onClick={() => changeRoute("nosotros")}
                         >
                             NOSOTROS
                         </p>
                         <p
                             className="font-medium text-gray-900 flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center transition duration-300 hover:text-blue-600"
-                            onClick={() => history.push("/contacto")}
+                            onClick={() => changeRoute("contacto")}
                         >
                             CONTACTO
                         </p>

@@ -2,17 +2,19 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 interface Props {}
 
 const Header = (props: Props) => {
+    const history = useHistory();
     return (
         <div className="relative flex flex-col py-8 lg:pt-0 lg:flex-col lg:pb-0 mb-10">
             <div className="flex flex-col items-start w-full max-w-xl px-4 mx-auto lg:px-8 lg:max-w-screen-xl">
                 <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
                     <div className="max-w-xl mb-6">
                         <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-800 sm:text-4xl sm:leading-none">
-                            Bienvenidos a MOONLOOK
+                            Bienvenidos/as a MOONLOOK
                             <br className="hidden md:block" />
                         </h2>
                         <p className="text-base text-gray-500 md:text-lg">
@@ -23,12 +25,12 @@ const Header = (props: Props) => {
                         </p>
                     </div>
                     <div className="flex flex-col items-center md:flex-row">
-                        <a
-                            href="/"
+                        <button
+                            onClick={() => history.push("/nosotros")}
                             className="inline-flex items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto md:mr-4 md:mb-0 bg-indigo-600 hover:bg-indigo-900 focus:shadow-outline focus:outline-none"
                         >
                             Mas informacion
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>

@@ -2,16 +2,22 @@ import axios from "axios";
 import { useReducer } from "react";
 import ContactReducer from "./ContaxtReducer";
 import { ReqContact } from "../../utils/interfaces";
-import { CLOSE_CONTACT_ALERT, ERROR_CONTACT, SUCCESS_CONTACT } from "../types";
+import {
+    CLOSE_ERROR_ALERT,
+    CLOSE_SUCCESS_ALERT,
+    ERROR_CONTACT,
+    SUCCESS_CONTACT,
+} from "../types";
 import ContactContext from "./ContactContext";
-import { checkValues, emailIsValid } from "../../utils/Checks";
+import { checkValues, emailIsValid, valuesIsValid } from "../../utils/Checks";
 const ContactState = (props: any) => {
-    const proxy = process.env.PROXY_URL || "";
+    const proxy = process.env.PROXY_URL || "http://localhost:5000";
 
     const initialState = {
         success: false,
         error: false,
-        message: "",
+        success_message: "",
+        error_message: "",
     };
 
     const [state, dispatch] = useReducer(ContactReducer, initialState);
@@ -23,26 +29,42 @@ const ContactState = (props: any) => {
                 req.apellido,
                 req.email,
                 req.description,
-                req.choose,
-                req.numero
+                req.choose
             );
             if (campsChecked) {
-                errorContact("Please send a valid types for the camps");
-                return;
+                errorContact(
+                    "Por favor envie los typos correctos de cada campo."
+                );
+                return false;
             }
             const emailChecked = emailIsValid(req.email);
             if (emailChecked) {
-                errorContact("Please send a valid email");
-                return;
+                errorContact("Por favor envie un email valido.");
+                return false;
             }
-            const resp = await axios.post(proxy, req);
+            const valuesChecked = valuesIsValid(
+                req.nombre,
+                req.apellido,
+                req.choose,
+                req.description
+            );
+            if (valuesChecked) {
+                errorContact("Por favor envie informacion valida.");
+                return false;
+            }
+            const resp = await axios.post(`${proxy}/contact`, {
+                name: `${req.nombre} ${req.apellido}`,
+                email: req.email,
+                choose: req.choose,
+                description: req.description,
+            });
             if (resp.data.succes === true) {
-                successContact("Succes to send your contact");
-                return;
+                successContact("Su mensaje ha sido enviado con exito.");
+                return true;
             }
         } catch (e) {
-            errorContact(e.response.data.message);
-            return;
+            errorContact("Error al enviar su mensaje, intente mas tarde.");
+            return false;
         }
     };
     const successContact = (message: string) => {
@@ -51,8 +73,11 @@ const ContactState = (props: any) => {
     const errorContact = (message: string) => {
         dispatch({ type: ERROR_CONTACT, payload: message });
     };
-    const closeContactAlert = () => {
-        dispatch({ type: CLOSE_CONTACT_ALERT, payload: null });
+    const closeErrorAlert = () => {
+        dispatch({ type: CLOSE_ERROR_ALERT, payload: null });
+    };
+    const closeSuccessAlert = () => {
+        dispatch({ type: CLOSE_SUCCESS_ALERT, payload: null });
     };
     return (
         <ContactContext.Provider
@@ -61,7 +86,8 @@ const ContactState = (props: any) => {
                 sendContact,
                 successContact,
                 errorContact,
-                closeContactAlert,
+                closeErrorAlert,
+                closeSuccessAlert,
             }}
         >
             {props.children}
