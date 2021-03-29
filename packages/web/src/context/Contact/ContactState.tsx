@@ -11,7 +11,7 @@ import {
 import ContactContext from "./ContactContext";
 import { checkValues, emailIsValid, valuesIsValid } from "../../utils/Checks";
 const ContactState = (props: any) => {
-    const proxy = process.env.PROXY_URL || "http://localhost:5000";
+    const proxy = process.env.REACT_APP_PROXY_URL || "http://localhost:5000";
 
     const initialState = {
         success: false,
